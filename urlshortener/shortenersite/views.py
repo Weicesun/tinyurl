@@ -19,7 +19,7 @@ def redirect_original(request, short_id):
     return HttpResponseRedirect(url.httpurl)
 def shorten_url(request):
     url = request.POST.get("url",'')
-    if not(url = ''):
+    if not(url == ''):
 	short_id = get_short_code()
 	b = Urls(httpurl=url, short_id=short_id)
 	b.save()
